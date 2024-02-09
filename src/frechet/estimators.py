@@ -3,16 +3,17 @@ https://en.wikipedia.org/wiki/Fr%C3%A9chet_inequalities
 '''
 
 import typing
+from typing import Tuple
 
-def intersection(probs):
+def intersection(probs) -> float:
     '''Compute Frechet bounds for an intersection of events.'''
     return max(0, sum(probs) - (len(probs) - 1), min(probs)
 
-def union(probs):
+def union(probs) -> float:
     '''Compute Frechet bounds for a union of events.'''
     return max(probs), min(1, sum(probs))
 
-def conditional(lprobs, rprobs, lop='intersection', rop='intersection'):
+def conditional(lprobs, rprobs, lop='intersection', rop='intersection') -> float:
     '''Frechet bounds for a conditional probability.
 
     PARAMETERS
@@ -41,7 +42,7 @@ def conditional(lprobs, rprobs, lop='intersection', rop='intersection'):
         raise NotImplementedError(f'Operator {rop} not implemented.')
 
 
-def jaccard_index(probs):
+def jaccard_index(probs) -> Tuple[float, float]:
     '''Frechet bounds for a Jaccard index.
     '''
     _intersection = intersection(probs)
