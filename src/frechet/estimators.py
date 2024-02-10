@@ -13,7 +13,7 @@ def union(probs) -> float:
     '''Compute Frechet bounds for a union of events.'''
     return max(probs), min(1, sum(probs))
 
-def conditional(lprobs, rprobs, lop='intersection', rop='intersection') -> float:
+    def conditional(lprobs, rprobs, lop:str='intersection', rop:str='intersection') -> float:
     '''Frechet bounds for a conditional probability.
 
     PARAMETERS
