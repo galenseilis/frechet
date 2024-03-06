@@ -8,4 +8,4 @@ Fréchet is a Python package dedicated to doing simple calculations involving th
 
 
 # Quick Start
-
+Here is a really quick example.
