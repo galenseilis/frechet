@@ -34,7 +34,7 @@ extra:
   homepage: https://galenseilis.github.io/
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/galenseilis/Frechet
+      link: https://github.com/galenseilis/frechet
 
 nav:
   - Overview: index.md
