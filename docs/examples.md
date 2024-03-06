@@ -92,7 +92,9 @@ as an intermediate step using the Frechet inequalities for the union:
 
 $$\max \left\{ Pr[\text{BRCA1}], Pr[\text{BRCA2}]\right\} = \frac{1}{300} \leq Pr[ \text{BRCA1} \cup \text{BRCA2}]$$
 
-$$ Pr[ \text{BRCA1} \cup \text{BRCA2}] \leq \min \left(1, Pr[\text{BRCA1}] + Pr[\text{BRCA2}]  \right) = \frac{7}{1200}$$ 
+$$ Pr[ \text{BRCA1} \cup \text{BRCA2}] \leq \min \left(1, Pr[\text{BRCA1}] + Pr[\text{BRCA2}]  \right) = \frac{7}{1200}$$
+
+Next we consider using Bayes' rule.
 
 ## Independence Gap
 
