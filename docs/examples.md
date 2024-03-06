@@ -94,7 +94,9 @@ $$\max \left\{ Pr[\text{BRCA1}], Pr[\text{BRCA2}]\right\} = \frac{1}{300} \leq P
 
 $$ Pr[ \text{BRCA1} \cup \text{BRCA2}] \leq \min \left(1, Pr[\text{BRCA1}] + Pr[\text{BRCA2}]  \right) = \frac{7}{1200}$$
 
-Next we consider using Bayes' rule.
+Next we consider the following definition of conditional probability:
+
+$$Pr[A \mid B] = \frac{Pr[A \cap B]}{Pr[B]}$$
 
 ## Independence Gap
 
