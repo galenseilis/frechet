@@ -35,7 +35,7 @@ holds, it should be clear that the independence gap quantifies statistical indep
 When the independence gap is zero then events are statistically independent. When the independence gap is positive it means that the joint probability is greater than what would be expected had the events been independent. When the independence gap is negative is means that the joint probability is less than what would have been expected had the events been statistically independent.
 
 ??? failure "Ruling Out Independence"
-	One might naïvely hope or expect that the bounds bounds could be used to rule out statistical independence, but that is not possible. The bounds will always cover zero.
+	One might naïvely hope or expect that the bounds could be used to rule out statistical independence, but that is not possible. The bounds will always cover zero.
 
 ## Almost-Disjoint Gap
 

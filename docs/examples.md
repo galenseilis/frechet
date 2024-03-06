@@ -83,6 +83,17 @@ respectively.
 
 Let us say that the thing we would like to know more about is probability of having cancer given that a person has either of the genetic markers, $Pr[\text{Breast Cancer} \mid \text{BRCA1} \cup \text{BRCA2}]$, but the requisite data is not available to estimate it directly. Instead, we only have those marginal probabilities to work with.
 
+We can compute the bounds on
+
+$$Pr[ \text{BRCA1} \cup \text{BRCA2}]$$ 
+
+as an intermediate step using the Frechet inequalities for the union:
+
+
+$$\max \left\{ Pr[\text{BRCA1}], Pr[\text{BRCA2}]\right\} = \frac{1}{300} \leq Pr[ \text{BRCA1} \cup \text{BRCA2}]$$
+
+$$ Pr[ \text{BRCA1} \cup \text{BRCA2}] \leq \min \left(1, Pr[\text{BRCA1}] + Pr[\text{BRCA2}]  \right) = \frac{7}{1200}$$ 
+
 ## Independence Gap
 
 ## Almost-Disjoint Gap
