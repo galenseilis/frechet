@@ -4,7 +4,7 @@ Python package for computing Fréchet bounds on intersections/unions of events, 
 
 ## Layout
 - All code lives in `src/frechet/main.py`. `src/frechet/__init__.py` is empty: import as `from frechet.main import intersection`, **not** `from frechet import ...`.
-- `docs/` holds MkDocs sources; `mkdocs.yml` is the doc build config. CI `.github/workflows/ci.yml` auto-deploys docs to `gh-pages` on every push to `main`/`master` (`mkdocs gh-deploy --force`). There is no lint/typecheck setup.
+- `docs/` holds MkDocs sources; `mkdocs.yml` is the doc build config. CI `.github/workflows/ci.yml` runs the test suite, then builds docs with `mkdocs build --strict` and publishes them with the GitHub Pages actions (`configure-pages`/`upload-pages-artifact`/`deploy-pages`) on every push to `main`/`master`. The repo's Pages build type is `workflow`, so `mkdocs gh-deploy` is **not** used. There is no lint/typecheck setup.
 
 ## Commands
 - Editable install: `pip install -e .` (setuptools src-layout auto-discovery; no dependencies).
