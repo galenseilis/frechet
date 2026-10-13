@@ -1,20 +1,46 @@
-name: docs
+name: ci
+
 on:
   push:
     branches:
-      - master 
       - main
-permissions:
-  contents: write
+      - master
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with: 
-          fetch-depth: 0
-      - uses: actions/setup-python@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: 3.9
-      - run: pip install mkdocs mkdocs-material mkdocs-markdownextradata-plugin mkdocs-git-revision-date-localized-plugin "mkdocstrings[python]"
-      - run: mkdocs gh-deploy --force
+          python-version: "3.9"
+      - name: Run test suite
+        run: python -m unittest discover -s tests -v
+
+  deploy:
+    needs: test
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.9"
+      - name: Install MkDocs and plugins
+        run: pip install mkdocs-material "mkdocstrings[python]"
+      - name: Configure git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Build and deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
